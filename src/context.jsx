@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
-const API_KEY = "3649ba98";
+const API_KEY = import.meta.env.REACT_APP_API_KEY;
 const API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&s=Avengers`;
 
 const AppContext = React.createContext();
