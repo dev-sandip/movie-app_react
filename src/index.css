@@ -9,8 +9,8 @@
 :root {
   line-height: 1.5;
   font-weight: 400;
-  /* background-color: #fff3da;
-  color: #beadfa; */
+  background-color: rgb(209 213 219);
+  /* color: #beadfa; */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

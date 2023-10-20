@@ -16,7 +16,7 @@ const Movies = () => {
           <NavLink to={`movie/${movie.imdbID}`} key={movie.imdbID}>
             <div
               key={movie.imdbID}
-              className="max-w-sm rounded overflow-hidden shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl hover:cursor-pointer mb-4 hover:bg-gray-300"
+              className="max-w-sm rounded overflow-hidden shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl hover:cursor-pointer mb-4 hover:bg-gray-200"
               style={{
                 display: "flex",
                 flexDirection: "column",
