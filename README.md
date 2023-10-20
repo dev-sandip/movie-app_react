@@ -16,7 +16,7 @@ This is a React application that allows users to search for movies and view thei
 
 ## Demo
 
-[Live Demo](#) - Insert a link to your live demo if available.
+[Live Demo](https://movie.sapkotasandip.com.np) - Insert a link to your live demo if available.
 
 ## Features
 
@@ -38,13 +38,13 @@ Before you get started, make sure you have the following software installed on y
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/react-movie-search-app.git
+   git clone https://github.com/your-username/movie-app_react.git
    ```
 
 2. Change to the project directory:
 
    ```bash
-   cd react-movie-search-app
+   cd movie-app_react
    ```
 
 3. Install project dependencies:
