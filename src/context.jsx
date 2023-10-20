@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
 const searchKeyword = "Avengers";
-const API_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${searchKeyword}`;
+const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchKeyword}`;
 
 const AppContext = React.createContext();
 
