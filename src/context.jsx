@@ -37,10 +37,12 @@ const AppProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    let timer = setTimeout(() => {
-      getMovie(`${API_URL}&s=${query}`);
-    }, 800);
-    return () => clearTimeout(timer);
+    if (query.length >= 3) {
+      let timer = setTimeout(() => {
+        getMovie(`${API_URL}&s=${query}`);
+      }, 500);
+      return () => clearTimeout(timer);
+    }
   }, [query]);
 
   return (

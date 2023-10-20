@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import LoadingPage from "../components/LoadingPage";
 const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
 const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
 const SingleMovie = () => {
@@ -28,14 +29,7 @@ const SingleMovie = () => {
     getMovie(`${API_URL}&i=${id}`);
   }, [id]);
   if (isLoading) {
-    return (
-      <div className="flex items-center justify-center h-screen">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-gray-700"></div>
-          <p className="mt-4 text-gray-600">Loading...</p>
-        </div>
-      </div>
-    );
+    return <LoadingPage />;
   }
 
   return (
