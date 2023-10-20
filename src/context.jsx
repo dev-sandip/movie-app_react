@@ -17,14 +17,13 @@ const AppProvider = ({ children }) => {
       const response = await axios.get(API_URL);
 
       const data = response.data;
-      console.log("🚀 ~ file: context.jsx:20 ~ getMovie ~ data:", data);
 
       if (data.Response === "True") {
         setIsLoading(false);
         setMovie(data.Search || data);
         setIsError({
           show: false,
-          msg: "",
+          msg: null,
         });
       } else {
         setIsError({
