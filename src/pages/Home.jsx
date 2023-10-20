@@ -1,9 +1,9 @@
 import Movies from "./Movies";
-import Search from "./Search.jsx";
+import SearchBar from "./SearchBar.jsx";
 const Home = () => {
   return (
     <>
-      <Search />
+      <SearchBar />
       <Movies />
     </>
   );

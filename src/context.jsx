@@ -1,8 +1,7 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
-const searchKeyword = "Avengers";
-const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchKeyword}`;
+const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
 
 const AppContext = React.createContext();
 
@@ -11,16 +10,22 @@ const AppProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [movie, setMovie] = useState([]);
   const [isError, setIsError] = useState({ show: false, msg: "" });
+  const [query, setQuery] = useState("Avengers");
 
   const getMovie = async (API_URL) => {
     try {
       const response = await axios.get(API_URL);
 
       const data = response.data;
+      console.log("🚀 ~ file: context.jsx:20 ~ getMovie ~ data:", data);
 
       if (data.Response === "True") {
         setIsLoading(false);
         setMovie(data.Search || data);
+        setIsError({
+          show: false,
+          msg: "",
+        });
       } else {
         setIsError({
           show: true,
@@ -33,11 +38,14 @@ const AppProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getMovie(API_URL);
-  }, []);
+    let timer = setTimeout(() => {
+      getMovie(`${API_URL}&s=${query}`);
+    }, 800);
+    return () => clearTimeout(timer);
+  }, [query]);
 
   return (
-    <AppContext.Provider value={{ isLoading, isError, movie }}>
+    <AppContext.Provider value={{ isLoading, isError, movie, query, setQuery }}>
       {children}
     </AppContext.Provider>
   );
@@ -47,4 +55,5 @@ const useGlobalContext = () => {
   return useContext(AppContext);
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export { AppContext, AppProvider, useGlobalContext };
