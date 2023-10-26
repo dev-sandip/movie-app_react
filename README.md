@@ -16,7 +16,7 @@ This is a React application that allows users to search for movies and view thei
 
 ## Demo
 
-[Live Demo](https://movie.sapkotasandip.com.np) - Insert a link to your live demo if available.
+[Live Demo](https://movie.sapkotasandip.com.np) 
 
 ## Features
 
